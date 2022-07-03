@@ -15,6 +15,7 @@ namespace CruddyCrittersAPI.Hubs
 
         public async Task CreateLobby(string name)
         {
+
             throw new NotImplementedException();
         }
 
