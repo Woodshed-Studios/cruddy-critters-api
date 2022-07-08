@@ -1,4 +1,5 @@
 using CruddyCrittersAPI.Hubs;
+using CruddyCrittersAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,8 @@ void ConfigureServices(IServiceCollection services)
 {
     services.AddControllers();
     services.AddSignalR();
+
+    services.AddSingleton<ILobbyManager, LobbyManager>();
 }
 
 /// <summary>

@@ -22,5 +22,11 @@ namespace CruddyCrittersAPI.Controllers
         {
             return Ok("");
         }
+
+        [HttpGet("/status")]
+        public ActionResult<string> GetStatus() 
+        {
+            return Ok("");
+        }
     }
 }
