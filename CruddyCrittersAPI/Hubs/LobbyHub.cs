@@ -7,29 +7,37 @@ namespace CruddyCrittersAPI.Hubs
     /// </summary>
     public class LobbyHub : Hub
     {
-        // TODO: How to properly divide and create lobbies?
         public async Task ChatMessage(string name, string message)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// We do not need this method. When a lobby is created the host can just call 'JoinLobby' instead.
+        /// </summary>
         public async Task CreateLobby(string name)
         {
-
+            // Create lobby and add member as host
+            // Generate a new lobby id
+            // string base64Id = Convert.ToBase64String(new Guid().ToByteArray());
+            // await Groups.AddToGroupAsync(Context.ConnectionId, base64Id);
             throw new NotImplementedException();
         }
 
         public async Task JoinLobby(string name, string roomCode)
         {
-            throw new NotImplementedException();
+            // Add member to lobby
+            
+            await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
+            await ChatMessage(name, "Joined the room!");
         }
 
         /// <summary>
         /// Not sure if this is needed, SignalR can detect when a user disconnects.
         /// </summary>
-        public async Task LeaveLobby()
+        public async Task LeaveLobby(string name, string roomCode)
         {
-            throw new NotImplementedException();
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, roomCode);
         }
     }
 }
