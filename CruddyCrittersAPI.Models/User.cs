@@ -1,5 +1,5 @@
 namespace CruddyCrittersAPI.Models;
 public class User
 {
-    // TODO
+    public string Name {get; set;}
 }

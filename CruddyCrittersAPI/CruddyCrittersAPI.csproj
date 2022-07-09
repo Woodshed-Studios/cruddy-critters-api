@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CruddyCrittersAPI.Services\CruddyCrittersAPI.Services.csproj" />
+    <ProjectReference Include="..\CruddyCrittersAPI.Models\CruddyCrittersAPI.Models.csproj" />
   </ItemGroup>
 
 </Project>
